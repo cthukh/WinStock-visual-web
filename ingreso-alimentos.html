@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173d30">
+  <title>WinStock | Ingreso de alimentos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body data-page="food-form">
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Navegación principal">
+      <div><a class="brand" href="index.html">WinStock</a><p class="brand-caption">GESTIÓN DEL PREDIO</p></div>
+      <p class="nav-label">GESTIÓN DEL PREDIO</p>
+      <nav aria-label="Gestión del predio"><ul class="nav-list">
+        <li><a class="nav-item" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg><span>Resumen</span></a></li>
+        <li><a class="nav-item" href="alimentos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.2 3.8c-5.1-.8-10.5 1.5-13 6.2-1.1 2.1-.7 4.4.7 5.8 1.5 1.5 3.8 1.8 5.8.7 4.7-2.5 7-7.9 6.5-12.7Z"/><path d="M4 20 18 6M8 16l-3-3m8-1-3-3m2 8-3-3m8-7-3-3"/></svg><span>Alimentos</span></a></li>
+        <li><a class="nav-item" href="insumos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z"/><path d="m4.3 7.7 7.7 4.5 7.7-4.5M12 12.2V21"/></svg><span>Insumos</span></a></li>
+        <li><div class="nav-divider" aria-hidden="true"></div></li>
+        <li><a class="nav-item active" href="ingreso-alimentos.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Ingreso de alimentos</span></a></li>
+        <li><a class="nav-item" href="ingreso-insumos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Ingreso de insumos</span></a></li>
+      </ul></nav>
+      <nav class="sidebar-bottom" aria-label="Ayuda y configuración"><a class="nav-item" href="#configuracion"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19 13.5v-3l-2-.5a6 6 0 0 0-.7-1.6l1-1.8-2.1-2.1-1.8 1a6 6 0 0 0-1.6-.7l-.5-2h-3l-.5 2a6 6 0 0 0-1.6.7l-1.8-1-2.1 2.1 1 1.8a6 6 0 0 0-.7 1.6l-2 .5v3l2 .5a6 6 0 0 0 .7 1.6l-1 1.8 2.1 2.1 1.8-1a6 6 0 0 0 1.6.7l.5 2h3l.5-2a6 6 0 0 0 1.6-.7l1.8 1 2.1-2.1-1-1.8a6 6 0 0 0 .7-1.6l2-.5Z"/></svg><span>Configuración</span></a><a class="nav-item" href="#ayuda"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 4.2 1.8c-1.1 1-1.7 1.4-1.7 2.7m0 3h.01"/></svg><span>Ayuda</span></a></nav>
+    </aside>
+    <main class="main">
+      <header class="topbar"><div class="topbar-leading"><button class="mobile-menu" id="mobile-menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="sidebar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><div class="breadcrumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg><span>Ingreso de alimentos</span></div></div><div class="topbar-actions"><div class="profile-wrap"><button class="profile-button" id="profile-button" type="button" aria-expanded="false" aria-controls="profile-menu"><span class="avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3"/><path d="M5.5 19a6.5 6.5 0 0 1 13 0"/></svg></span><span>Mi cuenta</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 10 5 5 5-5"/></svg></button><div class="profile-menu" id="profile-menu" hidden><a href="#perfil">Mi perfil</a></div></div></div></header>
+      <section class="content" aria-labelledby="food-form-heading">
+        <div class="page-top"><div><h1 class="page-title" id="food-form-heading">Ingreso de alimentos</h1><p class="page-subtitle">Registra compras y existencias de alimento para el predio.</p></div><a class="secondary-button" href="alimentos.html">Volver al inventario</a></div>
+        <div class="view-tabs" aria-label="Secciones de alimentos"><a class="view-tab" href="alimentos.html">Inventario</a><a class="view-tab active" href="ingreso-alimentos.html" aria-current="page">Ingreso de alimentos</a></div>
+        <div class="form-panel"><div class="form-heading"><h2>Detalles del ingreso</h2><p>Los campos marcados con * son obligatorios.</p></div>
+          <form class="entry-form" id="food-form">
+            <div class="form-grid">
+              <div class="form-field"><label for="food-type">Tipo de alimento *</label><select class="field-control" id="food-type" name="type" required data-add-option="new-food-type" data-new-field="new-food-type"><option value="">Selecciona un alimento</option><option>Trigo</option><option>Maíz</option><option>Soya</option><option>Ensilaje</option><option>Heno</option><option>Concentrado</option><option>Afrechillo</option><option>Sales minerales</option><option value="__new__">Agregar nuevo...</option></select><input class="field-control custom-entry" id="new-food-type" name="new-food-type" type="text" placeholder="Nombre del nuevo alimento" hidden></div>
+              <div class="form-field"><label for="food-quantity">Cantidad (kg) *</label><input class="field-control" id="food-quantity" name="quantity" type="number" min="0.01" step="0.01" placeholder="Ej. 500" required></div>
+              <div class="form-field"><label for="food-sacks">Cantidad de sacos</label><input class="field-control" id="food-sacks" name="sacks" type="number" min="0" step="1" placeholder="Ej. 20"></div>
+              <div class="form-field"><label for="food-sack-type">Tipo de saco</label><select class="field-control" id="food-sack-type" name="sackType"><option value="">Selecciona un formato</option><option>25 kg</option><option>40 kg</option><option>50 kg</option><option>Maxi saco 500 kg</option><option>Maxi saco 1000 kg</option><option>A granel</option><option>Otro</option></select></div>
+              <div class="form-field"><label for="food-date">Fecha de compra <span class="optional">(opcional)</span></label><input class="field-control" id="food-date" name="date" type="date"></div>
+              <div class="form-field"><label for="food-provider">Proveedor <span class="optional">(opcional)</span></label><input class="field-control" id="food-provider" name="provider" type="text" placeholder="Nombre del proveedor"></div>
+              <div class="form-field full-width"><label for="food-notes">Observaciones <span class="optional">(opcional)</span></label><textarea class="field-control" id="food-notes" name="notes" placeholder="Notas sobre este ingreso..."></textarea></div>
+            </div>
+            <div class="form-actions"><button class="secondary-button" type="reset">Limpiar</button><button class="primary-button" type="submit">Guardar ingreso</button></div><p class="form-status" id="food-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
