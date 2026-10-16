@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173D30">
+  <title>Alimento | WinStock</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="layout.js"></script>
+</head>
+<body data-section="Alimentos">
+  <div id="app">
+    <main class="page-content" data-role="admin">
+      <section data-form-mode="crear" aria-labelledby="create-food-title">
+        <div class="page-heading">
+          <div>
+            <h1 id="create-food-title">Registrar alimento</h1>
+            <p class="text-muted">Ingresa el nombre y el stock inicial.</p>
+          </div>
+          <span class="sample-label">Datos de ejemplo</span>
+        </div>
+
+        <form class="card account-form">
+          <!-- [SIMULADO] -->
+          <div class="form-field">
+            <label for="food-name-new">Nombre</label>
+            <input id="food-name-new" type="text" value="Heno" required aria-invalid="true" aria-describedby="food-name-error">
+            <p class="form-error" id="food-name-error">Ya existe un alimento con ese nombre.</p>
+          </div>
+
+          <div class="form-field">
+            <label for="initial-stock">Stock inicial (kg)</label>
+            <input id="initial-stock" type="number" min="0" step="any" value="0" required>
+          </div>
+
+          <div class="form-actions">
+            <a class="button button-secondary" href="alimentos.html">Cancelar</a>
+            <button class="button button-primary" type="button">Registrar alimento</button>
+          </div>
+        </form>
+      </section>
+
+      <section data-form-mode="editar" aria-labelledby="edit-food-title" hidden>
+        <div class="page-heading">
+          <div>
+            <h1 id="edit-food-title">Editar alimento</h1>
+            <p class="text-muted">Modifica el nombre del alimento.</p>
+          </div>
+          <span class="sample-label">Datos de ejemplo</span>
+        </div>
+
+        <form class="card account-form">
+          <!-- [SIMULADO] -->
+          <div class="form-field">
+            <label for="food-name-edit">Nombre</label>
+            <input id="food-name-edit" type="text" value="Maíz" required>
+          </div>
+
+          <div class="form-actions">
+            <a class="button button-secondary" href="alimentos.html">Cancelar</a>
+            <button class="button button-primary" type="button">Guardar cambios</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

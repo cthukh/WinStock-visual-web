@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173D30">
+  <title>Insumo | WinStock</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="layout.js"></script>
+</head>
+<body data-section="Insumos">
+  <div id="app">
+    <main class="page-content" data-role="admin">
+      <section data-form-mode="crear" aria-labelledby="create-supply-title">
+        <div class="page-heading">
+          <div>
+            <h1 id="create-supply-title">Registrar insumo</h1>
+            <p class="text-muted">Ingresa el nombre, categoría y cantidad inicial.</p>
+          </div>
+          <span class="sample-label">Datos de ejemplo</span>
+        </div>
+
+        <form class="card account-form">
+          <div class="form-field">
+            <label for="supply-name-new">Nombre</label>
+            <input id="supply-name-new" type="text" required aria-invalid="true" aria-describedby="supply-name-error">
+            <p class="form-error" id="supply-name-error">Ya existe un insumo con ese nombre.</p>
+          </div>
+          <div class="form-field">
+            <label for="supply-category-new">Categoría</label>
+            <input id="supply-category-new" type="text" required>
+          </div>
+          <div class="form-field">
+            <label for="supply-quantity-new">Cantidad inicial</label>
+            <input id="supply-quantity-new" type="number" min="0" step="any" value="0" required>
+          </div>
+          <div class="form-actions">
+            <a class="button button-secondary" href="insumos.html">Cancelar</a>
+            <button class="button button-primary" type="button">Registrar insumo</button>
+          </div>
+        </form>
+      </section>
+
+      <section data-form-mode="editar" aria-labelledby="edit-supply-title" hidden>
+        <div class="page-heading">
+          <div>
+            <h1 id="edit-supply-title">Editar insumo</h1>
+            <p class="text-muted">Modifica el nombre y la categoría.</p>
+          </div>
+          <span class="sample-label">Datos de ejemplo</span>
+        </div>
+
+        <form class="card account-form">
+          <!-- [SIMULADO] -->
+          <div class="form-field">
+            <label for="supply-name-edit">Nombre</label>
+            <input id="supply-name-edit" type="text" value="Filtro hidráulico" required>
+          </div>
+          <!-- [SIMULADO] -->
+          <div class="form-field">
+            <label for="supply-category-edit">Categoría</label>
+            <input id="supply-category-edit" type="text" value="Repuestos" required>
+          </div>
+          <div class="form-actions">
+            <a class="button button-secondary" href="insumos.html">Cancelar</a>
+            <button class="button button-primary" type="button">Guardar cambios</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

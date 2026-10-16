@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173D30">
+  <title>Lotes | WinStock</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="layout.js"></script>
+</head>
+<body data-section="Lotes">
+  <div id="app">
+    <main class="page-content" data-role="admin">
+      <div class="page-heading">
+        <div>
+          <h1>Lotes</h1>
+          <p class="text-muted">Categorías y cantidad de animales.</p>
+        </div>
+        <span class="sample-label">Datos de ejemplo</span>
+      </div>
+
+      <div class="page-actions lot-actions">
+        <a class="button button-primary" href="lote-form.html">Registrar lote</a>
+        <div class="form-field lot-filter">
+          <label for="lot-category-filter">Categoría</label>
+          <select id="lot-category-filter" data-lot-filter>
+            <option value="">Todas las categorías</option>
+            <option value="terneros">Terneros</option>
+            <option value="vacas-produccion">Vacas en producción</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th scope="col">Categoría</th>
+              <th scope="col">Cantidad de animales</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- [SIMULADO] -->
+            <tr data-lot-row data-category="terneros">
+              <td data-label="Categoría">Terneros</td>
+              <td data-label="Cantidad de animales">38</td>
+              <td data-label="Acciones"><a class="button button-secondary button-small" href="lote-form.html?modo=editar">Editar</a></td>
+            </tr>
+            <!-- [SIMULADO] -->
+            <tr data-lot-row data-category="vacas-produccion">
+              <td data-label="Categoría">Vacas en producción</td>
+              <td data-label="Cantidad de animales">126</td>
+              <td data-label="Acciones"><a class="button button-secondary button-small" href="lote-form.html?modo=editar">Editar</a></td>
+            </tr>
+            <!-- [SIMULADO] -->
+            <tr data-lot-row data-category="terneros">
+              <td data-label="Categoría">Terneros</td>
+              <td data-label="Cantidad de animales">24</td>
+              <td data-label="Acciones"><a class="button button-secondary button-small" href="lote-form.html?modo=editar">Editar</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

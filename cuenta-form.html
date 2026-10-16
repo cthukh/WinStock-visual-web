@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173D30">
+  <title>Funcionario | WinStock</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="layout.js"></script>
+</head>
+<body data-section="Cuentas">
+  <div id="app">
+    <main class="page-content" data-role="admin">
+      <section data-form-mode="crear" aria-labelledby="create-title">
+        <div class="page-heading">
+          <div>
+            <h1 id="create-title">Crear funcionario</h1>
+            <p class="text-muted">Ingresa los datos y asigna los inventarios visibles.</p>
+          </div>
+          <span class="sample-label">Datos de ejemplo</span>
+        </div>
+
+        <form class="card account-form">
+          <div class="form-field">
+            <label for="nombre-nuevo">Nombre</label>
+            <input id="nombre-nuevo" type="text" autocomplete="name" required>
+          </div>
+
+          <div class="form-field">
+            <label for="email-nuevo">Email</label>
+            <input id="email-nuevo" type="email" autocomplete="email" required aria-invalid="true" aria-describedby="email-error">
+            <p class="form-error" id="email-error">El email ya está registrado</p>
+          </div>
+
+          <fieldset class="inventory-options">
+            <legend>Inventarios que puede ver</legend>
+            <label class="checkbox-row" for="nuevo-alimentos">
+              <input id="nuevo-alimentos" type="checkbox" value="alimentos">
+              <span>Alimentos</span>
+            </label>
+            <label class="checkbox-row" for="nuevo-insumos">
+              <input id="nuevo-insumos" type="checkbox" value="insumos">
+              <span>Insumos</span>
+            </label>
+          </fieldset>
+
+          <div class="form-actions">
+            <a class="button button-secondary" href="cuentas.html">Cancelar</a>
+            <button class="button button-primary" type="button">Crear funcionario</button>
+          </div>
+        </form>
+      </section>
+
+      <section data-form-mode="editar" aria-labelledby="edit-title" hidden>
+        <div class="page-heading">
+          <div>
+            <h1 id="edit-title">Editar funcionario</h1>
+            <p class="text-muted">Modifica los datos y los inventarios visibles.</p>
+          </div>
+          <span class="sample-label">Datos de ejemplo</span>
+        </div>
+
+        <form class="card account-form">
+          <!-- [SIMULADO] -->
+          <div class="form-field">
+            <label for="nombre-editar">Nombre</label>
+            <input id="nombre-editar" type="text" value="Camila Ríos" autocomplete="name" required>
+          </div>
+
+          <!-- [SIMULADO] -->
+          <div class="form-field">
+            <label for="email-editar">Email</label>
+            <input id="email-editar" type="email" value="camila.rios@ejemplo.cl" autocomplete="email" required>
+          </div>
+
+          <fieldset class="inventory-options">
+            <legend>Inventarios que puede ver</legend>
+            <label class="checkbox-row" for="editar-alimentos">
+              <input id="editar-alimentos" type="checkbox" value="alimentos" checked>
+              <span>Alimentos</span>
+            </label>
+            <label class="checkbox-row" for="editar-insumos">
+              <input id="editar-insumos" type="checkbox" value="insumos" checked>
+              <span>Insumos</span>
+            </label>
+          </fieldset>
+
+          <div class="form-actions">
+            <a class="button button-secondary" href="cuentas.html">Cancelar</a>
+            <button class="button button-primary" type="button">Guardar cambios</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

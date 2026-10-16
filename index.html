@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173D30">
+  <title>Ingresar | WinStock</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="layout.js"></script>
+</head>
+<body class="login-page">
+  <main class="login-layout">
+    <section class="login-panel" aria-labelledby="login-title">
+      <a class="brand brand-login" href="index.html" aria-label="WinStock, inicio">
+        <span class="brand-name">WinStock</span>
+        <span class="brand-subtitle">GESTIÓN DEL PREDIO</span>
+      </a>
+
+      <div class="login-copy">
+        <p class="eyebrow">GESTIÓN DEL PREDIO</p>
+        <h1 id="login-title">Iniciar sesión</h1>
+        <p class="text-muted">Ingresa tus datos para continuar.</p>
+      </div>
+
+      <p class="form-error login-error" role="alert" data-login-error hidden>Credenciales inválidas</p>
+
+      <form class="form-stack" action="index.html?error=1" method="get">
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input id="email" type="email" autocomplete="username" required>
+        </div>
+        <div class="form-field">
+          <label for="clave">Contraseña</label>
+          <input id="clave" type="password" autocomplete="current-password" required>
+        </div>
+        <button class="button button-primary button-full" type="submit">Ingresar</button>
+      </form>
+    </section>
+
+    <aside class="login-aside" aria-hidden="true">
+      <div class="login-aside-mark">W</div>
+      <p>WinStock</p>
+      <span>GESTIÓN DEL PREDIO</span>
+    </aside>
+  </main>
+</body>
+</html>

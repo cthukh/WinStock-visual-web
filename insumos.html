@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173D30">
+  <title>Insumos | WinStock</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="layout.js"></script>
+</head>
+<body data-section="Insumos">
+  <div id="app">
+    <main class="page-content" data-inventory="insumos">
+      <div class="page-heading">
+        <div>
+          <h1>Insumos</h1>
+          <p class="text-muted">Insumos para maquinaria del predio.</p>
+        </div>
+        <span class="sample-label">Datos de ejemplo</span>
+      </div>
+
+      <div class="page-actions">
+        <a class="button button-primary" href="insumo-form.html" data-role="admin">Registrar insumo</a>
+      </div>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th scope="col">Nombre</th>
+              <th scope="col">Categoría</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- [SIMULADO] -->
+            <tr>
+              <td data-label="Nombre">Filtro hidráulico</td>
+              <td data-label="Categoría">Repuestos</td>
+              <td data-label="Cantidad">6 unidades</td>
+              <td data-label="Acciones" class="table-actions">
+                <div class="food-actions">
+                  <button class="button button-secondary button-small" type="button" data-modal-open="stock-adjustment" data-food="Filtro hidráulico" data-stock="6" data-stock-unit="unidades">Modificar stock</button>
+                  <span data-role="admin"><a class="button button-secondary button-small" href="insumo-form.html?modo=editar">Editar</a></span>
+                </div>
+              </td>
+            </tr>
+            <!-- [SIMULADO] -->
+            <tr>
+              <td data-label="Nombre">Grasa multipropósito</td>
+              <td data-label="Categoría">Lubricación</td>
+              <td data-label="Cantidad">8 unidades</td>
+              <td data-label="Acciones" class="table-actions">
+                <div class="food-actions">
+                  <button class="button button-secondary button-small" type="button" data-modal-open="stock-adjustment" data-food="Grasa multipropósito" data-stock="8" data-stock-unit="unidades" data-example="insufficient" data-quantity="10">Modificar stock</button>
+                  <span data-role="admin"><a class="button button-secondary button-small" href="insumo-form.html?modo=editar">Editar</a></span>
+                </div>
+              </td>
+            </tr>
+            <!-- [SIMULADO] -->
+            <tr>
+              <td data-label="Nombre">Correa de transmisión</td>
+              <td data-label="Categoría">Repuestos</td>
+              <td data-label="Cantidad">4 unidades</td>
+              <td data-label="Acciones" class="table-actions">
+                <div class="food-actions">
+                  <button class="button button-secondary button-small" type="button" data-modal-open="stock-adjustment" data-food="Correa de transmisión" data-stock="4" data-stock-unit="unidades">Modificar stock</button>
+                  <span data-role="admin"><a class="button button-secondary button-small" href="insumo-form.html?modo=editar">Editar</a></span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <dialog class="confirm-dialog" id="stock-adjustment" aria-label="Modificar stock de insumo">
+        <form class="dialog-content modal-form" data-stock-form>
+          <h2>Modificar stock</h2>
+          <div class="stock-modal-meta">
+            <span data-stock-food-name>Grasa multipropósito</span>
+            <span>Stock actual: <strong data-stock-current>8 unidades</strong></span>
+          </div>
+
+          <fieldset class="inventory-options stock-mode-options">
+            <legend>Movimiento</legend>
+            <label class="checkbox-row" for="stock-sumar">
+              <input id="stock-sumar" name="stock-mode" type="radio" value="sumar" checked data-stock-mode>
+              <span>Sumar</span>
+            </label>
+            <label class="checkbox-row" for="stock-descontar">
+              <input id="stock-descontar" name="stock-mode" type="radio" value="descontar" data-stock-mode>
+              <span>Descontar</span>
+            </label>
+          </fieldset>
+
+          <div class="form-field">
+            <label for="stock-quantity" data-stock-quantity-label>Cantidad (unidades)</label>
+            <input id="stock-quantity" type="number" min="0.01" step="any" required>
+          </div>
+
+          <div class="form-field" data-reason-field hidden>
+            <label for="stock-reason">Motivo</label>
+            <input id="stock-reason" type="text">
+          </div>
+
+          <div class="dialog-actions">
+            <button class="button button-secondary" type="button" data-modal-close>Cancelar</button>
+            <button class="button button-primary" type="submit">Continuar</button>
+          </div>
+        </form>
+      </dialog>
+
+      <dialog class="confirm-dialog" id="insufficient-stock" aria-label="Confirmar descuento con stock insuficiente">
+        <div class="dialog-content">
+          <h2>Stock insuficiente</h2>
+          <p class="text-muted">Si continúas, el stock quedará en 0. ¿Continuar?</p>
+          <div class="dialog-actions">
+            <button class="button button-secondary" type="button" data-stock-resume>Cancelar</button>
+            <button class="button button-primary" type="button" data-modal-close>Continuar</button>
+          </div>
+        </div>
+      </dialog>
+    </main>
+  </div>
+</body>
+</html>

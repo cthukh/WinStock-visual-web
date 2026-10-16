@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173D30">
+  <title>Lote | WinStock</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="layout.js"></script>
+</head>
+<body data-section="Lotes">
+  <div id="app">
+    <main class="page-content" data-role="admin">
+      <section data-form-mode="crear" aria-labelledby="create-lot-title">
+        <div class="page-heading">
+          <div>
+            <h1 id="create-lot-title">Registrar lote</h1>
+            <p class="text-muted">Ingresa la categoría y cantidad de animales.</p>
+          </div>
+          <span class="sample-label">Datos de ejemplo</span>
+        </div>
+
+        <form class="card account-form">
+          <div class="form-field">
+            <label for="lot-category-new">Categoría</label>
+            <select id="lot-category-new" required>
+              <option value="">Seleccionar categoría</option>
+              <option value="terneros">Terneros</option>
+              <option value="vacas-produccion">Vacas en producción</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="lot-count-new">Cantidad de animales</label>
+            <input id="lot-count-new" type="number" min="1" step="1" required>
+          </div>
+          <div class="form-actions">
+            <a class="button button-secondary" href="lotes.html">Cancelar</a>
+            <button class="button button-primary" type="button">Registrar lote</button>
+          </div>
+        </form>
+      </section>
+
+      <section data-form-mode="editar" aria-labelledby="edit-lot-title" hidden>
+        <div class="page-heading">
+          <div>
+            <h1 id="edit-lot-title">Editar lote</h1>
+            <p class="text-muted">Modifica la categoría y cantidad de animales.</p>
+          </div>
+          <span class="sample-label">Datos de ejemplo</span>
+        </div>
+
+        <form class="card account-form">
+          <!-- [SIMULADO] -->
+          <div class="form-field">
+            <label for="lot-category-edit">Categoría</label>
+            <select id="lot-category-edit" required>
+              <option value="terneros">Terneros</option>
+              <option value="vacas-produccion" selected>Vacas en producción</option>
+            </select>
+          </div>
+          <!-- [SIMULADO] -->
+          <div class="form-field">
+            <label for="lot-count-edit">Cantidad de animales</label>
+            <input id="lot-count-edit" type="number" min="1" step="1" value="126" required>
+          </div>
+          <div class="form-actions">
+            <a class="button button-secondary" href="lotes.html">Cancelar</a>
+            <button class="button button-primary" type="button">Guardar cambios</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

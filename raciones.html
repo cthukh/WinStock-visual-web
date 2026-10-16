@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173D30">
+  <title>Raciones | WinStock</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="layout.js"></script>
+</head>
+<body data-section="Raciones">
+  <div id="app">
+    <main class="page-content" data-role="admin">
+      <div class="page-heading">
+        <div>
+          <h1>Raciones</h1>
+          <p class="text-muted">Registro diario e historial de raciones.</p>
+        </div>
+        <span class="sample-label">Datos de ejemplo</span>
+      </div>
+
+      <div class="tab-list" role="tablist" aria-label="Vistas de raciones">
+        <button class="tab-button is-active" id="tab-register" type="button" role="tab" aria-selected="true" aria-controls="panel-register" data-ration-tab="registrar">Registrar ración</button>
+        <button class="tab-button" id="tab-history" type="button" role="tab" aria-selected="false" aria-controls="panel-history" data-ration-tab="historial">Historial</button>
+      </div>
+
+      <section class="tab-panel" id="panel-register" role="tabpanel" aria-labelledby="tab-register" data-ration-panel="registrar">
+        <form class="card ration-form" data-ration-form>
+          <div class="ration-meta-grid">
+            <div class="form-field">
+              <label for="ration-lot">Lote</label>
+              <select id="ration-lot" required>
+                <option value="">Seleccionar lote</option>
+                <!-- [SIMULADO] -->
+                <option value="terneros">Terneros</option>
+                <!-- [SIMULADO] -->
+                <option value="vacas-produccion">Vacas en producción</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="ration-date">Fecha</label>
+              <input id="ration-date" type="date" value="2026-10-16" required>
+            </div>
+            <div class="form-field">
+              <label for="ration-shift">Turno</label>
+              <select id="ration-shift" required>
+                <option value="manana">Mañana</option>
+                <option value="tarde">Tarde</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="ration-food-heading">
+            <h2>Alimentos</h2>
+            <p class="text-muted">Ingresa los kilos de cada alimento.</p>
+          </div>
+
+          <p class="form-error" role="alert" data-duplicate-error hidden>No se puede repetir el mismo alimento.</p>
+
+          <div class="ration-rows" data-ration-rows>
+            <div class="ration-row" data-ration-row>
+              <div class="form-field">
+                <label for="ration-food-1">Alimento</label>
+                <select id="ration-food-1" data-food-select required>
+                  <option value="">Seleccionar alimento</option>
+                  <option value="maiz" data-stock="1850">Maíz</option>
+                  <option value="trigo" data-stock="800">Trigo</option>
+                  <option value="heno" data-stock="640" selected>Heno</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="ration-quantity-1">Kilos</label>
+                <input id="ration-quantity-1" type="number" min="0.01" step="any" value="700" required data-food-quantity>
+              </div>
+              <button class="button button-secondary remove-row" type="button" data-remove-food aria-label="Quitar alimento">Quitar</button>
+            </div>
+          </div>
+
+          <div class="ration-actions">
+            <button class="button button-secondary" type="button" data-add-food>Agregar alimento</button>
+            <button class="button button-primary" type="submit">Guardar ración</button>
+          </div>
+          <p class="notice notice-success" role="status" data-ration-success hidden>Ración registrada correctamente.</p>
+        </form>
+      </section>
+
+      <section class="tab-panel" id="panel-history" role="tabpanel" aria-labelledby="tab-history" data-ration-panel="historial" hidden>
+        <div class="filter-bar">
+          <div class="form-field">
+            <label for="history-lot">Lote</label>
+            <select id="history-lot" data-history-filter="lot">
+              <option value="">Todos los lotes</option>
+              <option value="terneros">Terneros</option>
+              <option value="vacas-produccion">Vacas en producción</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="history-date">Fecha</label>
+            <input id="history-date" type="date" data-history-filter="date">
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th scope="col">Fecha</th>
+                <th scope="col">Turno</th>
+                <th scope="col">Lote</th>
+                <th scope="col">Alimentos y kilos</th>
+                <th scope="col">Registró</th>
+                <th scope="col">Estado</th>
+              </tr>
+            </thead>
+            <tbody data-history-rows>
+              <!-- [SIMULADO] -->
+              <tr data-history-row data-date="2026-10-16" data-lot="terneros">
+                <td data-label="Fecha">16-10-2026</td>
+                <td data-label="Turno">Mañana</td>
+                <td data-label="Lote">Terneros</td>
+                <td data-label="Alimentos y kilos">Heno: 700 kg</td>
+                <td data-label="Registró">Administrador</td>
+                <td data-label="Estado"><span class="warning-tag">Stock insuficiente</span></td>
+              </tr>
+              <!-- [SIMULADO] -->
+              <tr data-history-row data-date="2026-10-15" data-lot="vacas-produccion">
+                <td data-label="Fecha">15-10-2026</td>
+                <td data-label="Turno">Tarde</td>
+                <td data-label="Lote">Vacas en producción</td>
+                <td data-label="Alimentos y kilos">Maíz: 120 kg, Trigo: 80 kg</td>
+                <td data-label="Registró">Funcionario</td>
+                <td data-label="Estado">Registrada</td>
+              </tr>
+              <!-- [SIMULADO] -->
+              <tr data-history-row data-date="2026-10-14" data-lot="terneros">
+                <td data-label="Fecha">14-10-2026</td>
+                <td data-label="Turno">Mañana</td>
+                <td data-label="Lote">Terneros</td>
+                <td data-label="Alimentos y kilos">Heno: 90 kg</td>
+                <td data-label="Registró">Administrador</td>
+                <td data-label="Estado">Registrada</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <dialog class="confirm-dialog" id="ration-warning" aria-label="Advertencia de stock insuficiente">
+        <div class="dialog-content">
+          <h2>Stock insuficiente</h2>
+          <ul class="warning-list" data-insufficient-list></ul>
+          <p class="text-muted">Si continúas, la ración se guarda con los kilos ingresados y el stock de esos alimentos queda en 0.</p>
+          <div class="dialog-actions">
+            <button class="button button-secondary" type="button" data-modal-close>Cancelar</button>
+            <button class="button button-primary" type="button" data-ration-continue>Continuar</button>
+          </div>
+        </div>
+      </dialog>
+    </main>
+  </div>
+</body>
+</html>

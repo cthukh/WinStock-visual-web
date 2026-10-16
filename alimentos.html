@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173D30">
+  <title>Alimentos | WinStock</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="layout.js"></script>
+</head>
+<body data-section="Alimentos">
+  <div id="app">
+    <main class="page-content">
+      <div class="page-heading">
+        <div>
+          <h1>Alimentos</h1>
+          <p class="text-muted">Existencias de alimentos del predio.</p>
+        </div>
+        <span class="sample-label">Datos de ejemplo</span>
+      </div>
+
+      <div class="page-actions">
+        <a class="button button-primary" href="alimento-form.html" data-role="admin">Registrar alimento</a>
+        <label class="switch-control" for="show-disabled">
+          <input id="show-disabled" type="checkbox" role="switch" aria-checked="false" data-disabled-toggle>
+          <span class="switch-track" aria-hidden="true"></span>
+          <span>Mostrar deshabilitados</span>
+        </label>
+      </div>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th scope="col">Nombre</th>
+              <th scope="col">Stock (kg)</th>
+              <th scope="col">Estado</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- [SIMULADO] -->
+            <tr>
+              <td data-label="Nombre">Maíz</td>
+              <td data-label="Stock (kg)">1.850</td>
+              <td data-label="Estado"><span class="food-status">Activa</span></td>
+              <td data-label="Acciones" class="table-actions">
+                <div class="food-actions">
+                  <button class="button button-secondary button-small" type="button" data-modal-open="stock-adjustment" data-food="Maíz" data-stock="1850">Modificar stock</button>
+                  <span data-role="admin">
+                    <a class="button button-secondary button-small" href="alimento-form.html?modo=editar">Editar</a>
+                    <button class="button button-danger button-small" type="button" data-modal-open="disable-food">Deshabilitar</button>
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <!-- [SIMULADO] -->
+            <tr>
+              <td data-label="Nombre">Trigo</td>
+              <td data-label="Stock (kg)">800</td>
+              <td data-label="Estado"><span class="food-status">Activa</span></td>
+              <td data-label="Acciones" class="table-actions">
+                <div class="food-actions">
+                  <button class="button button-secondary button-small" type="button" data-modal-open="stock-adjustment" data-food="Trigo" data-stock="800">Modificar stock</button>
+                  <span data-role="admin">
+                    <a class="button button-secondary button-small" href="alimento-form.html?modo=editar">Editar</a>
+                    <button class="button button-danger button-small" type="button" data-modal-open="disable-food">Deshabilitar</button>
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <!-- [SIMULADO] -->
+            <tr>
+              <td data-label="Nombre">Heno</td>
+              <td data-label="Stock (kg)">640</td>
+              <td data-label="Estado"><span class="food-status">Activa</span></td>
+              <td data-label="Acciones" class="table-actions">
+                <div class="food-actions">
+                  <button class="button button-secondary button-small" type="button" data-modal-open="stock-adjustment" data-food="Heno" data-stock="640" data-example="insufficient">Modificar stock</button>
+                  <span data-role="admin">
+                    <a class="button button-secondary button-small" href="alimento-form.html?modo=editar">Editar</a>
+                    <button class="button button-danger button-small" type="button" data-modal-open="disable-food">Deshabilitar</button>
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <!-- [SIMULADO] -->
+            <tr data-disabled-food hidden>
+              <td data-label="Nombre">Alfalfa</td>
+              <td data-label="Stock (kg)">250</td>
+              <td data-label="Estado"><span class="food-status">Deshabilitada</span></td>
+              <td data-label="Acciones" class="table-actions">
+                <div class="food-actions">
+                  <button class="button button-secondary button-small" type="button" data-modal-open="stock-adjustment" data-food="Alfalfa" data-stock="250">Modificar stock</button>
+                  <span data-role="admin">
+                    <a class="button button-secondary button-small" href="alimento-form.html?modo=editar">Editar</a>
+                  </span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <dialog class="confirm-dialog" id="stock-adjustment" aria-label="Modificar stock de alimento">
+        <form class="dialog-content modal-form" data-stock-form>
+          <h2>Modificar stock</h2>
+          <div class="stock-modal-meta">
+            <span data-stock-food-name>Heno</span>
+            <span>Stock actual: <strong data-stock-current>640 kg</strong></span>
+          </div>
+
+          <fieldset class="inventory-options stock-mode-options">
+            <legend>Movimiento</legend>
+            <label class="checkbox-row" for="stock-sumar">
+              <input id="stock-sumar" name="stock-mode" type="radio" value="sumar" checked data-stock-mode>
+              <span>Sumar</span>
+            </label>
+            <label class="checkbox-row" for="stock-descontar">
+              <input id="stock-descontar" name="stock-mode" type="radio" value="descontar" data-stock-mode>
+              <span>Descontar</span>
+            </label>
+          </fieldset>
+
+          <div class="form-field">
+            <label for="stock-quantity">Cantidad (kg)</label>
+            <input id="stock-quantity" type="number" min="0.01" step="any" required>
+          </div>
+
+          <div class="form-field" data-reason-field hidden>
+            <label for="stock-reason">Motivo</label>
+            <input id="stock-reason" type="text">
+          </div>
+
+          <div class="dialog-actions">
+            <button class="button button-secondary" type="button" data-modal-close>Cancelar</button>
+            <button class="button button-primary" type="submit">Continuar</button>
+          </div>
+        </form>
+      </dialog>
+
+      <dialog class="confirm-dialog" id="insufficient-stock" aria-label="Confirmar descuento con stock insuficiente">
+        <div class="dialog-content">
+          <h2>Stock insuficiente</h2>
+          <p class="text-muted">Si continúas, el stock quedará en 0. ¿Continuar?</p>
+          <div class="dialog-actions">
+            <button class="button button-secondary" type="button" data-stock-resume>Cancelar</button>
+            <button class="button button-primary" type="button" data-modal-close>Continuar</button>
+          </div>
+        </div>
+      </dialog>
+
+      <dialog class="confirm-dialog" id="disable-food" aria-label="Confirmar deshabilitación del alimento">
+        <div class="dialog-content">
+          <h2>¿Deshabilitar este alimento?</h2>
+          <p class="text-muted">El alimento dejará de aparecer en la lista principal.</p>
+          <div class="dialog-actions">
+            <button class="button button-secondary" type="button" data-modal-close>Cancelar</button>
+            <button class="button button-primary" type="button" data-modal-close>Deshabilitar</button>
+          </div>
+        </div>
+      </dialog>
+    </main>
+  </div>
+</body>
+</html>

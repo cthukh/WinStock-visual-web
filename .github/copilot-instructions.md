@@ -6,7 +6,7 @@ Actúa como desarrollador front-end senior con enfoque en UX/UI móvil primero.
 
 REGLAS OBLIGATORIAS
 1. Implementa SOLO lo que describo. No inventes módulos, campos ni pantallas. Si falta información, pregúntame antes.
-2. NO incluyas: compras, proveedores, órdenes de compra, alertas, notificaciones, stock mínimo, "objetivo de stock", semáforo de estado del stock, "Configuración" ni "Ayuda".
+2. NO incluyas módulos de gestión comercial, gestión de entidades externas, comunicaciones automáticas, umbrales mínimos, métricas meta ni indicadores visuales del nivel de existencias; tampoco pantallas de ajustes generales ni asistencia.
 3. Todo dato mostrado es de ejemplo. Muestra una etiqueta discreta "Datos de ejemplo" en las pantallas con datos y marca los datos inventados con el comentario <!-- [SIMULADO] -->. No uses nombres de personas reales.
 4. Idioma: español de Chile. Números con punto de miles (1.850 kg).
 5. Tecnologías: HTML5, un solo styles.css y JavaScript vanilla. Sin frameworks, librerías ni CDN. Debe abrirse con doble clic en index.html (sin servidor): no uses fetch ni includes. El layout compartido se inyecta desde layout.js con plantillas de texto.
@@ -32,4 +32,4 @@ ARCHIVOS
 index.html es el login. Una página por pantalla en la raíz, más styles.css y layout.js. Reutiliza los mismos componentes (botones, tarjetas, tablas, formularios, modales, avisos) en todas las páginas.
 
 PRIMERA TAREA
-Crea solo styles.css, layout.js, index.html (login) y resumen.html. El resumen debe tener: título "Resumen de la gestión", botón "Registrar ración diaria", tarjetas con el stock de cada alimento (nombre y kg, SIN estado ni objetivo) y tarjetas "Alimentos" e "Insumos" con enlace "Ver inventario". Cuando termines, detente y espera mis instrucciones.
+Crea solo styles.css, layout.js, index.html (login) y resumen.html. El resumen debe tener: título "Resumen de la gestión", botón "Registrar ración diaria", tarjetas con el stock de cada alimento (nombre y kg, sin mostrar estados ni metas) y tarjetas "Alimentos" e "Insumos" con enlace "Ver inventario". Cuando termines, detente y espera mis instrucciones.

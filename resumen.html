@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173D30">
+  <title>Resumen | WinStock</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="layout.js"></script>
+</head>
+<body data-section="Resumen" data-access="admin">
+  <div id="app">
+    <main class="page-content" data-role="admin">
+      <div class="page-heading">
+        <div>
+          <h1>Resumen de la gestión</h1>
+          <p class="text-muted">Existencias de alimentos del predio.</p>
+        </div>
+        <div class="heading-tools">
+          <button class="button button-secondary install-button" type="button">Instalar WinStock en tu dispositivo</button>
+          <span class="sample-label">Datos de ejemplo</span>
+        </div>
+      </div>
+
+      <div class="page-actions">
+        <a class="button button-primary" href="raciones.html">Registrar ración diaria</a>
+      </div>
+
+      <section class="content-section" aria-labelledby="stock-heading">
+        <div class="section-heading">
+          <h2 id="stock-heading">Existencias de alimentos</h2>
+        </div>
+        <div class="stock-grid">
+          <!-- [SIMULADO] -->
+          <article class="card stock-card">
+            <h3>Maíz</h3>
+            <p class="stock-amount"><span>1.850</span> <span class="stock-unit">kg</span></p>
+          </article>
+          <!-- [SIMULADO] -->
+          <article class="card stock-card">
+            <h3>Trigo</h3>
+            <p class="stock-amount"><span>800</span> <span class="stock-unit">kg</span></p>
+          </article>
+          <!-- [SIMULADO] -->
+          <article class="card stock-card">
+            <h3>Heno</h3>
+            <p class="stock-amount"><span>640</span> <span class="stock-unit">kg</span></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="inventory-grid" aria-label="Inventarios">
+        <article class="card inventory-card">
+          <h2>Alimentos</h2>
+          <a class="text-link" href="alimentos.html">Ver inventario <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="card inventory-card">
+          <h2>Insumos</h2>
+          <a class="text-link" href="insumos.html">Ver inventario <span aria-hidden="true">→</span></a>
+        </article>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

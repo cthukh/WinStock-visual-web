@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173D30">
+  <title>Reportes | WinStock</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="layout.js"></script>
+</head>
+<body data-section="Reportes">
+  <div id="app">
+    <main class="page-content" data-role="admin">
+      <div class="page-heading">
+        <div>
+          <h1>Reportes</h1>
+          <p class="text-muted">Resumen mensual de raciones y movimientos.</p>
+        </div>
+        <span class="sample-label">Datos de ejemplo</span>
+      </div>
+
+      <div class="report-filter">
+        <div class="form-field">
+          <label for="report-month">Mes</label>
+          <select id="report-month">
+            <option value="2026-10" selected>Octubre 2026</option>
+            <option value="2026-09">Septiembre 2026</option>
+            <option value="2026-08">Agosto 2026</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="report-grid">
+        <section class="card report-block" aria-labelledby="ration-consumption-title">
+          <h2 id="ration-consumption-title">Kg consumidos por alimento en raciones</h2>
+          <div class="report-table-wrap">
+            <table class="data-table report-table">
+              <thead><tr><th scope="col">Alimento</th><th scope="col">Cantidad</th></tr></thead>
+              <tbody>
+                <!-- [SIMULADO] -->
+                <tr><td data-label="Alimento">Maíz</td><td data-label="Cantidad">3.200 kg</td></tr>
+                <!-- [SIMULADO] -->
+                <tr><td data-label="Alimento">Trigo</td><td data-label="Cantidad">2.100 kg</td></tr>
+                <!-- [SIMULADO] -->
+                <tr><td data-label="Alimento">Heno</td><td data-label="Cantidad">4.500 kg</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="card report-block" aria-labelledby="stock-added-title">
+          <h2 id="stock-added-title">Kg sumados al stock por alimento</h2>
+          <div class="report-table-wrap">
+            <table class="data-table report-table">
+              <thead><tr><th scope="col">Alimento</th><th scope="col">Cantidad</th></tr></thead>
+              <tbody>
+                <!-- [SIMULADO] -->
+                <tr><td data-label="Alimento">Maíz</td><td data-label="Cantidad">1.200 kg</td></tr>
+                <!-- [SIMULADO] -->
+                <tr><td data-label="Alimento">Trigo</td><td data-label="Cantidad">500 kg</td></tr>
+                <!-- [SIMULADO] -->
+                <tr><td data-label="Alimento">Heno</td><td data-label="Cantidad">0 kg</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="card report-block" aria-labelledby="lot-deliveries-title">
+          <h2 id="lot-deliveries-title">Kg entregados por lote</h2>
+          <div class="report-table-wrap">
+            <table class="data-table report-table">
+              <thead><tr><th scope="col">Lote</th><th scope="col">Cantidad</th></tr></thead>
+              <tbody>
+                <!-- [SIMULADO] -->
+                <tr><td data-label="Lote">Terneros</td><td data-label="Cantidad">1.650 kg</td></tr>
+                <!-- [SIMULADO] -->
+                <tr><td data-label="Lote">Vacas en producción</td><td data-label="Cantidad">8.150 kg</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <footer class="report-footer">Los datos corresponden a lo registrado en el sistema</footer>
+    </main>
+  </div>
+</body>
+</html>

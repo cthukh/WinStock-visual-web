@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173D30">
+  <title>Cuentas | WinStock</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="layout.js"></script>
+</head>
+<body data-section="Cuentas">
+  <div id="app">
+    <main class="page-content" data-role="admin">
+      <div class="page-heading">
+        <div>
+          <h1>Cuentas</h1>
+          <p class="text-muted">Funcionarios con acceso al sistema.</p>
+        </div>
+        <span class="sample-label">Datos de ejemplo</span>
+      </div>
+
+      <div class="page-actions">
+        <a class="button button-primary" href="cuenta-form.html">Crear funcionario</a>
+      </div>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th scope="col">Nombre</th>
+              <th scope="col">Email</th>
+              <th scope="col">Inventarios asignados</th>
+              <th scope="col">Estado</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- [SIMULADO] -->
+            <tr>
+              <td data-label="Nombre">Camila Ríos</td>
+              <td data-label="Email">camila.rios@ejemplo.cl</td>
+              <td data-label="Inventarios asignados"><span class="tag">Alimentos</span><span class="tag">Insumos</span></td>
+              <td data-label="Estado"><span class="account-status status-active">Activa</span></td>
+              <td data-label="Acciones" class="table-actions">
+                <a class="button button-secondary button-small" href="cuenta-form.html?modo=editar">Editar</a>
+                <button class="button button-danger button-small" type="button" data-modal-open="disable-account">Deshabilitar</button>
+              </td>
+            </tr>
+            <!-- [SIMULADO] -->
+            <tr>
+              <td data-label="Nombre">Diego Fuentes</td>
+              <td data-label="Email">diego.fuentes@ejemplo.cl</td>
+              <td data-label="Inventarios asignados"><span class="tag">Alimentos</span></td>
+              <td data-label="Estado"><span class="account-status status-active">Activa</span></td>
+              <td data-label="Acciones" class="table-actions">
+                <a class="button button-secondary button-small" href="cuenta-form.html?modo=editar">Editar</a>
+                <button class="button button-danger button-small" type="button" data-modal-open="disable-account">Deshabilitar</button>
+              </td>
+            </tr>
+            <!-- [SIMULADO] -->
+            <tr>
+              <td data-label="Nombre">Valentina Soto</td>
+              <td data-label="Email">valentina.soto@ejemplo.cl</td>
+              <td data-label="Inventarios asignados"><span class="tag">Insumos</span></td>
+              <td data-label="Estado"><span class="account-status status-disabled">Deshabilitada</span></td>
+              <td data-label="Acciones" class="table-actions">
+                <a class="button button-secondary button-small" href="cuenta-form.html?modo=editar">Editar</a>
+                <button class="button button-danger button-small" type="button" data-modal-open="disable-account">Deshabilitar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <dialog class="confirm-dialog" id="disable-account" aria-label="Confirmar deshabilitación de cuenta">
+        <div class="dialog-content">
+          <h2>¿Deshabilitar esta cuenta?</h2>
+          <p class="text-muted">La cuenta no se borra. Su historial se conserva.</p>
+          <div class="dialog-actions">
+            <button class="button button-secondary" type="button" data-modal-close>Cancelar</button>
+            <button class="button button-primary" type="button" data-modal-close>Deshabilitar</button>
+          </div>
+        </div>
+      </dialog>
+    </main>
+  </div>
+</body>
+</html>
